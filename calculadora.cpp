@@ -15,5 +15,11 @@ int main()
 		numbers.push_back(number);
 	}
 
+	int sum = 0;
+	for(auto number : numbers)
+	{
+		sum += number;
+	}
+
 	return 0;
 }
