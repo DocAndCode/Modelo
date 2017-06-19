@@ -10,6 +10,8 @@
 
 using namespace std;
 
+void counting_sort(vector<int> &numbers, vector<int> &sorted);
+
 int main()
 {
 	vector<int> numbers;
@@ -19,6 +21,20 @@ int main()
 		numbers.push_back(number);
 	}
 
+	vector<int> sorted(numbers.size());
+	counting_sort(numbers, sorted);
+
+	for(auto number : sorted)
+	{
+		cout << "[" << number << "]";
+	}
+	cout << endl;
+
+	return 0;
+}
+
+void counting_sort(vector<int> &numbers, vector<int> &sorted)
+{
 	map<int,int> count_list;
 
 	int max = 0;
@@ -40,18 +56,9 @@ int main()
 		total += old_count;
 	}
 
-	vector<int> sorted(numbers.size());
 	for(int i = 0; i < numbers.size(); ++i)
 	{
 		sorted[count_list[numbers[i]]] = numbers[i];
 		++count_list[numbers[i]];
 	}
-
-	for(auto number : sorted)
-	{
-		cout << "[" << number << "]";
-	}
-	cout << endl;
-
-	return 0;
 }

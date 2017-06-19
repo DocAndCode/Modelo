@@ -9,10 +9,23 @@
 
 using namespace std;
 
+void calculate_sum_and_product(int &sum, int &product);
+
 int main()
 {
-	int sum = 0;
-	int product = 1;
+	int sum, product;
+	calculate_sum_and_product(sum, product);
+
+	cout << "Sum: " << sum << endl;
+	cout << "Product: " << product << endl;
+
+	return 0;
+}
+
+void calculate_sum_and_product(int &sum, int &product)
+{
+	sum = 0;
+	product = 1;
 
 	int number;
 	while(cin >> number and number)
@@ -20,9 +33,4 @@ int main()
 		sum += number;
 		product *= number;
 	}
-
-	cout << "Sum: " << sum << endl;
-	cout << "Product: " << product << endl;
-
-	return 0;
 }
