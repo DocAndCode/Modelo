@@ -21,5 +21,11 @@ int main()
 		sum += number;
 	}
 
+	int product = 1;
+	for(auto number : numbers)
+	{
+		product *= number;
+	}
+
 	return 0;
 }
